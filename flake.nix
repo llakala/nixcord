@@ -1,30 +1,54 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
+    nuschtosSearch.url = "github:NuschtOS/search";
   };
-  outputs =
-    {
-      self,
-      nixpkgs,
-      systems,
-      treefmt-nix,
-      ...
-    }:
-    let
-      eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
 
-      treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+  outputs =
+    inputs:
+    let
+      systems = [
+        "aarch64-darwin"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "x86_64-linux"
+      ];
+
+      eachSystem =
+        f: inputs.nixpkgs.lib.genAttrs systems (system: f inputs.nixpkgs.legacyPackages.${system});
+
+      evalModules =
+        pkgs:
+        pkgs.lib.evalModules {
+          modules = [
+            { config._module.check = false; }
+            inputs.self.homeManagerModules.nixcord
+          ];
+        };
+
+      generateDocs =
+        pkgs:
+        let
+          evaluated = evalModules pkgs;
+        in
+        (pkgs.nixosOptionsDoc {
+          options = evaluated.options.programs.nixcord.config;
+          warningsAreErrors = true;
+        });
     in
     {
       homeManagerModules.nixcord = import ./hm-module.nix;
-    }
-    // {
-      # formatter & check
-      formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
-      checks = eachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.system}.config.build.check self;
+
+      packages = eachSystem (pkgs: {
+        search =
+          let
+            optionsJSON = (generateDocs pkgs).optionsJSON;
+          in
+          inputs.nuschtosSearch.packages.${pkgs.system}.mkSearch {
+            optionsJSON = optionsJSON + "/share/doc/nixos/options.json";
+            title = "Nixcord Options";
+            urlPrefix = "https://github.com/KaylorBen/nixcord/blob/main";
+          };
       });
     };
 }

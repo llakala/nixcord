@@ -4,44 +4,54 @@ let
 in
 {
   chatInputButtonAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   commandsAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   memberListDecoratorsAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   messageAccessoriesAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   messageDecorationsAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   messageEventsAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   messagePopoverAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   messageUpdaterAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   serverListAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   userSettingsAPI.enable = mkOption {
-    type = types.bool;
     default = true;
+    description = "Internal Vencord API";
+    type = types.bool;
   };
   accountPanelServerProfile = {
     enable = mkEnableOption ''
