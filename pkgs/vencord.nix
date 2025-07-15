@@ -15,9 +15,9 @@
 }:
 
 let
-  stableVersion = "1.12.5";
-  stableHash = "sha256-RAYU6ZMnbLBtWI11JqLI+/8+PM2UqRxadpne2s9nmSA=";
-  stablePnpmDeps = "sha256-hO6QKRr4jTfesRDAEGcpFeJmGTGLGMw6EgIvD23DNzw=";
+  stableVersion = "1.12.6";
+  stableHash = "sha256-7JT8BMKUhIwYMkIwr2mD8IQLDpldcDtAKh6R1tbAKMw=";
+  stablePnpmDeps = "sha256-QiD4qTRtz5vz0EEc6Q08ej6dbVGMlPLU2v0GVKNBQyc=";
 
   unstableVersion = "1.12.5-unstable-2025-07-15";
   unstableRev = "a33e81d1cbd7ab50c0b1e1446c925bf259e671fc";
