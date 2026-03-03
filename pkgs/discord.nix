@@ -89,10 +89,10 @@ let
       development = "0.0.94";
     };
     darwin = {
-      stable = "0.0.379";
-      ptb = "0.0.211";
-      canary = "0.0.990";
-      development = "0.0.107";
+      stable = "0.0.127";
+      ptb = "0.0.179";
+      canary = "0.0.885";
+      development = "0.0.94";
     };
   };
 
