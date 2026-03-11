@@ -130,7 +130,7 @@ let
       };
       development = fetchurl {
         url = "https://development.dl2.discordapp.net/apps/osx/${versions.darwin.development}/DiscordDevelopment.dmg";
-        hash = "sha256-85i2vjOj4JhoKwcACyXzUKwonb5qndYoy+4AjrXtaLE=";
+        hash = "sha256-SfZPiM4aELNbfs/ILG7VSYfUq7cfXfOQuZxpRKBj27E=";
       };
     };
     aarch64-darwin = srcs.x86_64-darwin;
