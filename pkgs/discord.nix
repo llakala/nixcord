@@ -126,7 +126,7 @@ let
       };
       canary = fetchurl {
         url = "https://canary.dl2.discordapp.net/apps/osx/${versions.darwin.canary}/DiscordCanary.dmg";
-        hash = "sha256-g5CH/HtljzSthcYENzkHcC5DFB9sUPIpuo3klFqVKT8=";
+        hash = "sha256-MvyBpR4tkay85f1vM608/fi3OwaijiVs6qXiBVYWyJQ=";
       };
       development = fetchurl {
         url = "https://development.dl2.discordapp.net/apps/osx/${versions.darwin.development}/DiscordDevelopment.dmg";
