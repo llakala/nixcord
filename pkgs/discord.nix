@@ -85,13 +85,13 @@ let
     linux = {
       stable = "0.0.131";
       ptb = "0.0.184";
-      canary = "0.0.935";
+      canary = "0.0.936";
       development = "0.0.99";
     };
     darwin = {
       stable = "0.0.131";
       ptb = "0.0.184";
-      canary = "0.0.935";
+      canary = "0.0.936";
       development = "0.0.99";
     };
   };
@@ -108,7 +108,7 @@ let
       };
       canary = fetchurl {
         url = "https://canary.dl2.discordapp.net/apps/linux/${versions.linux.canary}/discord-canary-${versions.linux.canary}.tar.gz";
-        hash = "sha256-m7odzP5h8vPfGh/iiZn6e+sqhDPWh2llzX8S0Yf4kqM=";
+        hash = "sha256-sDaN5nPwgkYkJz6qwsxDp56LKBZhBRZVHJlg/ntBdTQ=";
       };
       development = fetchurl {
         url = "https://development.dl2.discordapp.net/apps/linux/${versions.linux.development}/discord-development-${versions.linux.development}.tar.gz";
