@@ -85,14 +85,14 @@ let
     linux = {
       stable = "0.0.132";
       ptb = "0.0.185";
-      canary = "0.0.949";
-      development = "0.0.240";
+      canary = "0.0.953";
+      development = "0.0.241";
     };
     darwin = {
       stable = "0.0.132";
       ptb = "0.0.185";
-      canary = "0.0.949";
-      development = "0.0.240";
+      canary = "0.0.953";
+      development = "0.0.241";
     };
   };
 
@@ -108,11 +108,11 @@ let
       };
       canary = fetchurl {
         url = "https://canary.dl2.discordapp.net/apps/linux/${versions.linux.canary}/discord-canary-${versions.linux.canary}.tar.gz";
-        hash = "sha256-p5NG3zEpAT3hQzZY6s56f/UWpwHIV6E02zsYUXWJ0ds=";
+        hash = "sha256-AeGtlmD/ZQcUzETLSrODJXwRy45wRGlKh5V5w/rCAto=";
       };
       development = fetchurl {
         url = "https://development.dl2.discordapp.net/apps/linux/${versions.linux.development}/discord-development-${versions.linux.development}.tar.gz";
-        hash = "sha256-AFkokZ1qRGuwZTvaXGxqUIFxvNnLVvWlGaRaZ436/14=";
+        hash = "sha256-37Z3nK3RAQb7k0/Zshu/cFBn0CWYKil/9kMpuXTCJxk=";
       };
     };
     x86_64-darwin = {
@@ -122,15 +122,15 @@ let
       };
       ptb = fetchurl {
         url = "https://ptb.dl2.discordapp.net/apps/osx/${versions.darwin.ptb}/DiscordPTB.dmg";
-        hash = "sha256-oM7ooPJ01qVhuRUuAqLCgoNWDYDbIKYhGKKHgIlt2XA=";
+        hash = "sha256-cixv9bdle7N3gMLG1pmYDRaaVBGZB4AsUZT8vwOJpCc=";
       };
       canary = fetchurl {
         url = "https://canary.dl2.discordapp.net/apps/osx/${versions.darwin.canary}/DiscordCanary.dmg";
-        hash = "sha256-SEzJmOZOdYSTzm93rjANGPx+BSn18qdRPLijQi8ToIQ=";
+        hash = "sha256-vVYz5paen/9IUSL/VY0VN+ATNPiU7HpAxQ52/SkyNB4=";
       };
       development = fetchurl {
         url = "https://development.dl2.discordapp.net/apps/osx/${versions.darwin.development}/DiscordDevelopment.dmg";
-        hash = "sha256-g7kW/qcaaR1ay1euqdVpk4VdqWEsszBMdsMwaWX5U8g=";
+        hash = "sha256-dCRl0gpxFdnEa81sSymj8Te0+KmmI9uXsmCXSY1EeNw=";
       };
     };
     aarch64-darwin = srcs.x86_64-darwin;
